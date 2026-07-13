@@ -1,17 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 445" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1010 660" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
   <style>
     .node   { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; }
     .label  { fill: #1f2937; font-size: 18px; font-weight: 600; }
-    .caption{ fill: #64748b; font-size: 12.5px; }
+    .caption{ fill: #64748b; font-size: 13.5px; }
     .icon   { stroke: #64748b; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-    .arrow  { stroke: #94a3b8; stroke-width: 2.5; }
+    .arrow  { stroke: #94a3b8; stroke-width: 2.5; fill: none; }
     .ahead  { fill: #94a3b8; }
     .gate      { fill: #0d9488; }
     .gatelabel { fill: #ffffff; font-size: 18px; font-weight: 700; }
-    .gatecap   { fill: #ccfbf1; font-size: 12.5px; }
+    .gatecap   { fill: #ccfbf1; font-size: 13.5px; }
     .gateicon  { stroke: #ffffff; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
     .chip      { fill: #115e59; }
-    .chiptext  { fill: #99f6e4; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+    .chiptext  { fill: #99f6e4; font-size: 11.5px; font-weight: 700; letter-spacing: 1px; }
     .zone      { fill: rgba(13, 148, 136, 0.05); stroke: rgba(13, 148, 136, 0.45); stroke-width: 1.5; stroke-dasharray: 6 5; }
     .zonetext  { fill: #0d9488; font-size: 13px; font-style: italic; font-weight: 500; }
     @media (prefers-color-scheme: dark) {
@@ -26,114 +26,116 @@
     }
   </style>
 
-  <!-- "your space" zone between the two gates -->
-  <rect class="zone" x="1012" y="112" width="276" height="266" rx="16"/>
-  <text class="zonetext" x="1150" y="360" text-anchor="middle">your space — build how you want</text>
-
-  <!-- arrowhead marker -->
   <defs>
     <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path class="ahead" d="M 0 0 L 10 5 L 0 10 z"/>
     </marker>
   </defs>
 
-  <!-- arrows -->
-  <line class="arrow" x1="242" y1="215" x2="284" y2="215" marker-end="url(#ah)"/>
-  <line class="arrow" x1="492" y1="215" x2="534" y2="215" marker-end="url(#ah)"/>
-  <line class="arrow" x1="742" y1="215" x2="784" y2="215" marker-end="url(#ah)"/>
-  <line class="arrow" x1="1002" y1="215" x2="1044" y2="215" marker-end="url(#ah)"/>
-  <line class="arrow" x1="1252" y1="215" x2="1294" y2="215" marker-end="url(#ah)"/>
-  <line class="arrow" x1="1512" y1="215" x2="1554" y2="215" marker-end="url(#ah)"/>
+  <!-- "your space" zone around Develop -->
+  <rect class="zone" x="133" y="375" width="242" height="215" rx="16"/>
+  <text class="zonetext" x="254" y="572" text-anchor="middle">your space — build how you want</text>
+
+  <!-- row 1 arrows -->
+  <line class="arrow" x1="222" y1="215" x2="258" y2="215" marker-end="url(#ah)"/>
+  <line class="arrow" x1="468" y1="215" x2="504" y2="215" marker-end="url(#ah)"/>
+  <line class="arrow" x1="714" y1="215" x2="750" y2="215" marker-end="url(#ah)"/>
+  <!-- bent connector row 1 -> row 2 -->
+  <path class="arrow" d="M 863 302 L 863 336 L 254 336 L 254 402" marker-end="url(#ah)"/>
+  <!-- row 2 arrows -->
+  <line class="arrow" x1="356" y1="475" x2="392" y2="475" marker-end="url(#ah)"/>
+  <line class="arrow" x1="612" y1="475" x2="648" y2="475" marker-end="url(#ah)"/>
 
   <!-- 1. Identify a problem -->
-  <rect class="node" x="42" y="150" width="200" height="130" rx="14"/>
+  <rect class="node" x="20" y="150" width="200" height="130" rx="14"/>
   <g class="icon">
-    <circle cx="142" cy="178" r="9"/>
-    <line x1="138" y1="190" x2="146" y2="190"/>
-    <line x1="139" y1="194" x2="145" y2="194"/>
+    <circle cx="120" cy="178" r="9"/>
+    <line x1="116" y1="190" x2="124" y2="190"/>
+    <line x1="117" y1="194" x2="123" y2="194"/>
   </g>
-  <text class="label" x="142" y="222" text-anchor="middle">Identify a problem</text>
-  <text class="caption" x="142" y="246" text-anchor="middle">something worth</text>
-  <text class="caption" x="142" y="262" text-anchor="middle">automating</text>
+  <text class="label" x="120" y="222" text-anchor="middle">Identify a problem</text>
+  <text class="caption" x="120" y="246" text-anchor="middle">something worth</text>
+  <text class="caption" x="120" y="263" text-anchor="middle">automating</text>
 
-  <!-- 2. Request a repository -->
-  <rect class="node" x="292" y="150" width="200" height="130" rx="14"/>
+  <!-- 2. Request a repo -->
+  <rect class="node" x="266" y="150" width="200" height="130" rx="14"/>
   <g class="icon">
-    <path d="M 378 170 h 10 l 4 5 h 14 v 18 h -28 z"/>
+    <path d="M 352 170 h 10 l 4 5 h 14 v 18 h -28 z"/>
   </g>
-  <text class="label" x="392" y="222" text-anchor="middle">Request a repo</text>
-  <text class="caption" x="392" y="246" text-anchor="middle">created in the company</text>
-  <text class="caption" x="392" y="262" text-anchor="middle">GitHub organization</text>
+  <text class="label" x="366" y="222" text-anchor="middle">Request a repo</text>
+  <text class="caption" x="366" y="246" text-anchor="middle">created in the company</text>
+  <text class="caption" x="366" y="263" text-anchor="middle">GitHub organization</text>
 
   <!-- 3. Write the SPEC -->
-  <rect class="node" x="542" y="150" width="200" height="130" rx="14"/>
+  <rect class="node" x="512" y="150" width="200" height="130" rx="14"/>
   <g class="icon">
-    <path d="M 630 168 h 14 l 6 6 v 20 h -20 z"/>
-    <line x1="634" y1="178" x2="644" y2="178"/>
-    <line x1="634" y1="184" x2="644" y2="184"/>
-    <path d="M 654 166 l 1.5 4 l 4 1.5 l -4 1.5 l -1.5 4 l -1.5 -4 l -4 -1.5 l 4 -1.5 z"/>
+    <path d="M 600 168 h 14 l 6 6 v 20 h -20 z"/>
+    <line x1="604" y1="178" x2="614" y2="178"/>
+    <line x1="604" y1="184" x2="614" y2="184"/>
+    <path d="M 624 166 l 1.5 4 l 4 1.5 l -4 1.5 l -1.5 4 l -1.5 -4 l -4 -1.5 l 4 -1.5 z"/>
   </g>
-  <text class="label" x="642" y="222" text-anchor="middle">Write the SPEC</text>
-  <text class="caption" x="642" y="246" text-anchor="middle">goal · users · data</text>
-  <text class="caption" x="642" y="262" text-anchor="middle">distribution · costs</text>
+  <text class="label" x="612" y="222" text-anchor="middle">Write the SPEC</text>
+  <text class="caption" x="612" y="246" text-anchor="middle">goal · users · data</text>
+  <text class="caption" x="612" y="263" text-anchor="middle">distribution · costs</text>
 
-  <!-- GATE 1: SPEC approval -->
-  <rect class="chip" x="838" y="96" width="114" height="22" rx="11"/>
-  <text class="chiptext" x="895" y="111" text-anchor="middle">CHECKPOINT 1</text>
-  <rect class="gate" x="790" y="130" width="210" height="170" rx="16"/>
+  <!-- CHECKPOINT 1: SPEC approval -->
+  <rect class="chip" x="804" y="96" width="118" height="22" rx="11"/>
+  <text class="chiptext" x="863" y="111" text-anchor="middle">CHECKPOINT 1</text>
+  <rect class="gate" x="758" y="130" width="210" height="170" rx="16"/>
   <g class="gateicon">
-    <circle cx="877" cy="160" r="7"/>
-    <path d="M 866 182 q 11 -12 22 0"/>
-    <circle cx="905" cy="153" r="4"/>
-    <circle cx="905" cy="175" r="4"/>
-    <line x1="905" y1="157" x2="905" y2="171"/>
-    <path d="M 905 153 q 14 0 14 14 v 4" fill="none"/>
-    <circle cx="919" cy="175" r="4"/>
+    <circle cx="845" cy="160" r="7"/>
+    <path d="M 834 182 q 11 -12 22 0"/>
+    <circle cx="873" cy="153" r="4"/>
+    <circle cx="873" cy="175" r="4"/>
+    <line x1="873" y1="157" x2="873" y2="171"/>
+    <path d="M 873 153 q 14 0 14 14 v 4" fill="none"/>
+    <circle cx="887" cy="175" r="4"/>
   </g>
-  <text class="gatelabel" x="895" y="222" text-anchor="middle">SPEC approval</text>
-  <text class="gatecap" x="895" y="248" text-anchor="middle">first merge to main</text>
-  <text class="gatecap" x="895" y="266" text-anchor="middle">reviewed by IT via PR</text>
+  <text class="gatelabel" x="863" y="222" text-anchor="middle">SPEC approval</text>
+  <text class="gatecap" x="863" y="248" text-anchor="middle">first merge to main</text>
+  <text class="gatecap" x="863" y="266" text-anchor="middle">reviewed by IT via PR</text>
 
   <!-- 5. Develop -->
-  <rect class="node" x="1050" y="150" width="200" height="130" rx="14"/>
+  <rect class="node" x="154" y="410" width="200" height="130" rx="14"/>
   <g class="icon">
-    <path d="M 1132 170 l -10 11 l 10 11"/>
-    <path d="M 1168 170 l 10 11 l -10 11"/>
-    <line x1="1155" y1="168" x2="1145" y2="194"/>
+    <path d="M 236 430 l -10 11 l 10 11"/>
+    <path d="M 272 430 l 10 11 l -10 11"/>
+    <line x1="259" y1="428" x2="249" y2="454"/>
   </g>
-  <text class="label" x="1150" y="222" text-anchor="middle">Develop</text>
-  <text class="caption" x="1150" y="246" text-anchor="middle">branches · small commits</text>
-  <text class="caption" x="1150" y="262" text-anchor="middle">AI-assisted · dev database</text>
+  <text class="label" x="254" y="482" text-anchor="middle">Develop</text>
+  <text class="caption" x="254" y="506" text-anchor="middle">branches · small commits</text>
+  <text class="caption" x="254" y="523" text-anchor="middle">AI-assisted · dev database</text>
 
-  <!-- GATE 2: Final PR review -->
-  <rect class="chip" x="1348" y="96" width="114" height="22" rx="11"/>
-  <text class="chiptext" x="1405" y="111" text-anchor="middle">CHECKPOINT 2</text>
-  <rect class="gate" x="1300" y="130" width="210" height="170" rx="16"/>
+  <!-- CHECKPOINT 2: Final review -->
+  <rect class="chip" x="446" y="356" width="118" height="22" rx="11"/>
+  <text class="chiptext" x="505" y="371" text-anchor="middle">CHECKPOINT 2</text>
+  <rect class="gate" x="400" y="390" width="210" height="170" rx="16"/>
   <g class="gateicon">
-    <circle cx="1387" cy="160" r="7"/>
-    <path d="M 1376 182 q 11 -12 22 0"/>
-    <circle cx="1415" cy="153" r="4"/>
-    <circle cx="1415" cy="175" r="4"/>
-    <line x1="1415" y1="157" x2="1415" y2="171"/>
-    <path d="M 1415 153 q 14 0 14 14 v 4" fill="none"/>
-    <circle cx="1429" cy="175" r="4"/>
+    <circle cx="487" cy="420" r="7"/>
+    <path d="M 476 442 q 11 -12 22 0"/>
+    <circle cx="515" cy="413" r="4"/>
+    <circle cx="515" cy="435" r="4"/>
+    <line x1="515" y1="417" x2="515" y2="431"/>
+    <path d="M 515 413 q 14 0 14 14 v 4" fill="none"/>
+    <circle cx="529" cy="435" r="4"/>
   </g>
-  <text class="gatelabel" x="1405" y="222" text-anchor="middle">Final review</text>
-  <text class="gatecap" x="1405" y="248" text-anchor="middle">only reviewed code</text>
-  <text class="gatecap" x="1405" y="266" text-anchor="middle">reaches main</text>
+  <text class="gatelabel" x="505" y="482" text-anchor="middle">Final review</text>
+  <text class="gatecap" x="505" y="508" text-anchor="middle">only reviewed code</text>
+  <text class="gatecap" x="505" y="526" text-anchor="middle">reaches main</text>
 
   <!-- 7. Deploy & maintain -->
-  <rect class="node" x="1560" y="150" width="200" height="130" rx="14"/>
+  <rect class="node" x="656" y="410" width="200" height="130" rx="14"/>
   <g class="icon">
-    <path d="M 1660 166 q 8 8 8 20 l -4 8 h -8 l -4 -8 q 0 -12 8 -20 z"/>
-    <circle cx="1660" cy="182" r="3"/>
-    <path d="M 1652 190 l -6 8 M 1668 190 l 6 8"/>
+    <path d="M 756 426 q 8 8 8 20 l -4 8 h -8 l -4 -8 q 0 -12 8 -20 z"/>
+    <circle cx="756" cy="442" r="3"/>
+    <path d="M 748 450 l -6 8 M 764 450 l 6 8"/>
   </g>
-  <text class="label" x="1660" y="222" text-anchor="middle">Deploy &amp; maintain</text>
-  <text class="caption" x="1660" y="240" text-anchor="middle">web apps deployed by IT</text>
-  <text class="caption" x="1660" y="256" text-anchor="middle">others as the SPEC defines</text>
-  <text class="caption" x="1660" y="272" text-anchor="middle">owning team maintains</text>
+  <text class="label" x="756" y="482" text-anchor="middle">Deploy &amp; maintain</text>
+  <text class="caption" x="756" y="500" text-anchor="middle">web apps deployed by IT</text>
+  <text class="caption" x="756" y="517" text-anchor="middle">others as the SPEC defines</text>
+  <text class="caption" x="756" y="534" text-anchor="middle">owning team maintains</text>
 
   <!-- legend -->
-  <text class="caption" x="900" y="425" text-anchor="middle">SPEC: a short document describing what the project is and how it will work&#8194;&#8226;&#8194;PR (pull request): how changes are submitted for review before entering main</text>
+  <text class="caption" x="505" y="622" text-anchor="middle">SPEC: a short document describing what the project is and how it will work</text>
+  <text class="caption" x="505" y="642" text-anchor="middle">PR (pull request): how changes are submitted for review before entering main</text>
 </svg>

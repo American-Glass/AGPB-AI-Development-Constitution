@@ -53,6 +53,7 @@ As regras vão evoluir com base no que as pessoas realmente constroem; espere qu
 
 - **Se você vai construir algo:** leia o [constitution.md](constitution.md) antes de começar. Ele explica como obter um repositório, o que é o gate do SPEC, de onde vêm seus dados e bancos de dados, e a stack recomendada que cobre a maioria dos casos de uso.
 - **Se você usa uma ferramenta de IA para programar:** forneça o `constitution.md` como contexto (por exemplo, referenciando-o no arquivo de instruções do seu projeto). As regras foram escritas para serem seguidas tanto por agentes de IA quanto por humanos.
+- **Quer ler a constituição em português?** Peça à sua ferramenta de IA para traduzir ou explicar o documento — o arquivo em inglês é sempre a versão atual.
 
 ### Resumo rápido
 
@@ -86,6 +87,7 @@ Las reglas evolucionarán según lo que la gente realmente construya; este docum
 
 - **Si vas a construir algo:** lee [constitution.md](constitution.md) antes de empezar. Explica cómo obtener un repositorio, qué es el gate del SPEC, de dónde vienen tus datos y bases de datos, y el stack recomendado que cubre la mayoría de los casos de uso.
 - **Si usas una herramienta de IA para programar:** entrégale `constitution.md` como contexto (por ejemplo, referenciándolo desde el archivo de instrucciones de tu proyecto). Las reglas están escritas para ser seguidas tanto por agentes de IA como por humanos.
+- **¿Quieres leer la constitución en español?** Pídele a tu herramienta de IA que traduzca o explique el documento — el archivo en inglés es siempre la versión vigente.
 
 ### Resumen rápido
 

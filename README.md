@@ -10,8 +10,6 @@ The constitution for AI-assisted development of tools, automations, and applicat
 
 **The document: [constitution.md](constitution.md)**
 
-![Development workflow: identify a problem, request a repo, write the SPEC, SPEC approval by IT via PR, develop, final review, deploy and maintain](assets/workflow-en.svg)
-
 ### What this is
 
 A deliberately lean set of rules for building software with AI inside the company. It is **permissive by design**: instead of restricting up front, it defines exactly **two human checkpoints** — the SPEC as the first merge to `main`, and deployment only through reviewed pull requests — and leaves everything in between to the developer.
@@ -24,6 +22,8 @@ The rules will evolve based on what people actually build, so expect this docume
 - **If you're using an AI coding tool:** give it `constitution.md` as context (e.g. reference it from your project's instructions file). The rules are written to be followed by AI agents as well as humans.
 
 ### Quick summary
+
+![Development workflow: identify a problem, request a repo, write the SPEC, SPEC approval by IT via PR, develop, final review, deploy and maintain](assets/workflow-en.svg)
 
 1. Every project gets a repository in the **American-Glass** GitHub organization.
 2. The first merge to `main` is the project's **SPEC**, reviewed by IT via pull request.
@@ -45,8 +45,6 @@ A constituição para o desenvolvimento assistido por IA de ferramentas, automa�
 
 **O documento: [constitution.md](constitution.md)** *(em inglês)*
 
-![Fluxo de desenvolvimento: encontre um problema, solicite um repo, escreva o SPEC, aprovação do SPEC pela TI via PR, desenvolva, revisão final, publique e mantenha](assets/workflow-pt-br.svg)
-
 ### O que é isto
 
 Um conjunto deliberadamente enxuto de regras para desenvolver software com IA dentro da empresa. É **permissivo por design**: em vez de restringir de antemão, define exatamente **dois pontos de controle humano** — o SPEC como o primeiro merge para a `main`, e o deploy somente através de pull requests revisados — e deixa todo o restante a cargo de quem desenvolve.
@@ -60,6 +58,8 @@ As regras vão evoluir com base no que as pessoas realmente constroem; espere qu
 - **Quer ler a constituição em português?** Peça à sua ferramenta de IA para traduzir ou explicar o documento — o arquivo em inglês é sempre a versão atual.
 
 ### Resumo rápido
+
+![Fluxo de desenvolvimento: encontre um problema, solicite um repo, escreva o SPEC, aprovação do SPEC pela TI via PR, desenvolva, revisão final, publique e mantenha](assets/workflow-pt-br.svg)
 
 1. Todo projeto ganha um repositório na organização **American-Glass** do GitHub.
 2. O primeiro merge para a `main` é o **SPEC** do projeto, revisado pela TI via pull request.
@@ -81,8 +81,6 @@ La constitución para el desarrollo asistido por IA de herramientas, automatizac
 
 **El documento: [constitution.md](constitution.md)** *(en inglés)*
 
-![Flujo de desarrollo: detecta un problema, solicita un repo, escribe el SPEC, aprobación del SPEC por TI vía PR, desarrolla, revisión final, despliega y mantén](assets/workflow-es.svg)
-
 ### Qué es esto
 
 Un conjunto deliberadamente reducido de reglas para desarrollar software con IA dentro de la empresa. Es **permisivo por diseño**: en lugar de restringir de antemano, define exactamente **dos puntos de control humano** — el SPEC como el primer merge a `main`, y el despliegue únicamente a través de pull requests revisados — y deja todo lo demás en manos de quien desarrolla.
@@ -96,6 +94,8 @@ Las reglas evolucionarán según lo que la gente realmente construya; este docum
 - **¿Quieres leer la constitución en español?** Pídele a tu herramienta de IA que traduzca o explique el documento — el archivo en inglés es siempre la versión vigente.
 
 ### Resumen rápido
+
+![Flujo de desarrollo: detecta un problema, solicita un repo, escribe el SPEC, aprobación del SPEC por TI vía PR, desarrolla, revisión final, despliega y mantén](assets/workflow-es.svg)
 
 1. Todo proyecto tiene un repositorio en la organización **American-Glass** de GitHub.
 2. El primer merge a `main` es el **SPEC** del proyecto, revisado por TI vía pull request.

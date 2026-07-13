@@ -1,0 +1,20 @@
+# Internal reference material — never publish
+/Refs
+
+# Documents and binaries (per the constitution's own rules)
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.pdf
+*.dxf
+*.dwg
+*.zip
+*.rar
+
+# Development cache / environment
+__pycache__/
+node_modules/
+.venv/
+.env
+*.log

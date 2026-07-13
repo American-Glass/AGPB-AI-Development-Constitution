@@ -8,7 +8,9 @@
 
 The constitution for AI-assisted development of tools, automations, and applications at AGP Brazil.
 
-📜 **The document: [constitution.md](constitution.md)**
+**The document: [constitution.md](constitution.md)**
+
+![Development workflow: identify a problem, request a repo, write the SPEC, SPEC approval by IT via PR, develop, final review, deploy and maintain](assets/workflow-en.svg)
 
 ### What this is
 
@@ -41,7 +43,9 @@ This is a living document — some sections are explicitly marked as under const
 
 A constituição para o desenvolvimento assistido por IA de ferramentas, automações e aplicações na AGP Brasil.
 
-📜 **O documento: [constitution.md](constitution.md)** *(em inglês)*
+**O documento: [constitution.md](constitution.md)** *(em inglês)*
+
+![Fluxo de desenvolvimento: encontre um problema, solicite um repo, escreva o SPEC, aprovação do SPEC pela TI via PR, desenvolva, revisão final, publique e mantenha](assets/workflow-pt-br.svg)
 
 ### O que é isto
 
@@ -75,7 +79,9 @@ Este é um documento vivo — algumas seções estão explicitamente marcadas co
 
 La constitución para el desarrollo asistido por IA de herramientas, automatizaciones y aplicaciones en AGP Brasil.
 
-📜 **El documento: [constitution.md](constitution.md)** *(en inglés)*
+**El documento: [constitution.md](constitution.md)** *(en inglés)*
+
+![Flujo de desarrollo: detecta un problema, solicita un repo, escribe el SPEC, aprobación del SPEC por TI vía PR, desarrolla, revisión final, despliega y mantén](assets/workflow-es.svg)
 
 ### Qué es esto
 

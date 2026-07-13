@@ -92,7 +92,7 @@ Like the stack, these are **recommendations, not requirements**. But if you're b
 
 - **Spec-driven development.** The SPEC being your first merge isn't just a gate — it works as a method. Before each feature, write down what it should do and how you'll know it works, and give that to your AI tool as the task. AI produces far better code from a clear spec than from a vague prompt, and the spec doubles as documentation.
 - **Test-driven development (TDD).** Write the test first, watch it fail, implement, watch it pass. This matters *more* with AI, not less: tests are how you verify code you didn't write line by line, and a test that failed before the implementation is proof it actually tests something.
-- **Small steps, small PRs.** Ask for one change at a time and commit working states often. If something breaks, you know exactly which step broke it — and small PRs get reviewed faster.
+- **Small steps, small commits.** Ask for one change at a time and commit working states often on your branch. If something breaks, you know exactly which step broke it. PRs, on the other hand, should bundle a coherent piece of work — no need to open one per tiny change.
 - **Understand what you accept.** If the AI generated code you can't explain, ask it to explain before you merge. Your area maintains this project (section 12); future-you is the audience.
 
 ## 11. Security & Data Hygiene (AI baseline)

@@ -108,6 +108,10 @@ When using AI to develop, these apply regardless of how permissive everything el
 
 The area that developed a project holds **primary responsibility for maintaining it** and guaranteeing it works well — data quality, file processing, and overall application health. IT deploys and supports the platform; the owning team owns the application.
 
+Maintainable implies organized. **Structure should be proportional to the project**: what is naturally simple can live in a single file, but as a project grows, its code belongs in modules with clear responsibilities.
+
+The same proportionality applies to documentation: the README (section 6) is the minimum. As a project grows, document whatever maintaining it requires.
+
 ## 13. Evolving This Document
 
 This constitution is a starting point, calibrated to be permissive while we learn. Planned improvements include a query/API environment provided by IT for data access, avoiding direct connections to internal databases. Suggestions and change requests are welcome — via pull request, naturally.

@@ -28,18 +28,20 @@ Everything between those two gates is up to you.
 
 **"Works on my PC" is not a deployment plan.** Projects that genuinely live on a single machine (e.g. a personal executable with no external data dependencies) are perfectly fine. What is not accepted is a project that needs to be distributed or accessed by others but was only ever validated locally — relying on files, data sources, or permissions that exist on the developer's machine and break the moment someone else runs it. If a project needs distribution or depends on shared data, that access (permissions, app registrations, reaching the live source rather than a local copy) is part of the architecture and belongs in the SPEC.
 
-## 3. What a SPEC Contains — 🚧 under construction
-
-> This section is not final. The minimum contents of a SPEC are still being defined and reviewed. The list below is a **draft starting point for that discussion**, not a rule yet.
+## 3. What a SPEC Contains
 
 A SPEC should at least answer:
 
-- What problem does the project solve, and for whom?
-- Who will use it, and roughly how many people?
-- What data sources does it need? (see section 5)
-- How will it be distributed or deployed?
-- Does it have costs, need budget, or require a new license or external service?
-- Does it process personal data?
+- **The problem** — what problem does the project solve, and for whom?
+- **Users & distribution** — who will use it, roughly how many people, and how will it be distributed or deployed?
+- **The stack** — what will it be built with? The recommended stack (section 9) is the default; deviations must be justified here.
+- **The solution sketch** — an outline of the architecture. Before writing it, discuss the idea with your AI tool: describe the problem and the solution you have in mind, and ask it to evaluate whether the approach is feasible and the tool you're considering fits the task. You don't need to be technical — that session is where "what I think I need" turns into "what actually solves it". The sketch that survives the discussion is what goes in the SPEC.
+- **Data sources** — what data does it need (section 5)? State whether it already exists in an approved origin or requires a new extraction — and, in the latter case, who provides it (the project itself or IT).
+- **Data validation** — how will you check that what the project shows matches the real world? The owning area guarantees data quality (section 12), so the strategy for validating processed data and files belongs in the SPEC.
+- **Edge cases & exceptions** — which known edge cases matter, and how are exceptions handled? Proportional to the project (section 12): a sketch, not an exhaustive list.
+- **Costs & licenses** — does it have costs, need budget, or require a new license or external service (section 8)? Budget needs leadership approval at SPEC approval time (section 2).
+- **Dependencies** — what does the project need from other areas or external services to work? (e.g. IT creating database credentials, permissions, app registrations)
+- **Personal data** — does it process personal data (customers, employees, etc.)? This matters for LGPD compliance.
 
 ## 4. Data Storage
 

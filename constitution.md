@@ -70,7 +70,8 @@ Application data must come only from:
 
 ## 7. Authentication
 
-- Web applications that require authentication must use **MSAUTH** (Microsoft authentication).
+- **MSAUTH** (Microsoft authentication) is the default for web applications that require authentication.
+- Not every user has a company Microsoft account, so other authentication methods are acceptable when the audience calls for it — provided they are properly implemented: use an established library or service (never homegrown), store only hashed passwords, and no shared or hardcoded credentials. Describe the chosen method in the SPEC.
 
 ## 8. Licenses & External Services
 

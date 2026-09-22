@@ -51,6 +51,12 @@ A SPEC should at least answer:
   - **ProjetosADM_DEV** — for development
 - **Database credentials are per project and must be requested from IT.** IT creates a dedicated database user for each project/application on the ProjetosADM bases. Applications authenticate with their own project credentials — never with personal logins, and never with credentials borrowed from another project.
 - **SQLite must not live in local folders.** SQLite files are only kept on the shared server folders (`T:` drive — ask IT for the server address).
+- **Naming conventions apply to every database, regardless of type:**
+  - Every table name is prefixed with the project name: `{ProjectName}_` (e.g. `TaskManager_`, `DashboardViewer_`).
+  - Every column name is prefixed with its table's name (e.g. table `TaskManager_Tasks` has columns `Task_Key`, `Task_Name`, ...).
+  - Every table has four audit columns: `_Creat` (user email who created the row), `_ts_Creat` (datetime created, UTC-3), `_Mod` (user who made the last modification), `_ts_Mod` (datetime of the last modification, UTC-3).
+  - Primary key columns are named `Key` (e.g. `Task_Key`, `Message_Key`).
+  - Foreign keys repeat the referenced table's name plus `_Key` (e.g. `Task_User_Key`, `Task_List_Key`).
 
 ## 5. Approved Data Origins
 

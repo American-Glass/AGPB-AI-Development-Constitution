@@ -76,8 +76,12 @@ Application data must come only from:
 
 ## 7. Authentication
 
-- **MSAUTH** (Microsoft authentication) is the default for web applications that require authentication.
-- Not every user has a company Microsoft account, so other authentication methods are acceptable when the audience calls for it — provided they are properly implemented: use an established library or service (never homegrown), store only hashed passwords, and no shared or hardcoded credentials. Describe the chosen method in the SPEC.
+- **AGP Auth** is the company's central login service and the default for applications that require authentication. It authenticates against the iSAGA users, groups, and permissions (login by username, HR registration, or SAP registration) and issues JWT access tokens with refresh tokens.
+  - The full integration contract is published for AI tools at `http://authapi.agpglass.com.br/llms.txt` — point your AI tool to it rather than letting it guess endpoints or fields.
+  - Registering the application, its groups and permissions, and user access is done **only by IT**. Request it before integrating (the llms.txt includes a request template) and list it under dependencies in the SPEC.
+  - The front-end permission check is UX only: the project's backend must validate the token and the permission on the server. The signing key is provided by IT and never goes in the front-end or the repository (section 11).
+- **MSAUTH** (Microsoft authentication) is reserved for applications that depend heavily on Microsoft identity — e.g. acting on the user's behalf in Microsoft 365 (SharePoint, Teams, Outlook, Graph). Justify the choice in the SPEC.
+- Other authentication methods are acceptable only when neither AGP Auth nor MSAUTH fits the audience — provided they are properly implemented: use an established library or service (never homegrown), store only hashed passwords, and no shared or hardcoded credentials. Describe the chosen method in the SPEC.
 
 ## 8. Licenses & External Services
 

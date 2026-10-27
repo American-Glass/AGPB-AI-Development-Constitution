@@ -50,13 +50,25 @@ A SPEC should at least answer:
   - **ProjetosADM** — for approved processes (production)
   - **ProjetosADM_DEV** — for development
 - **Database credentials are per project and must be requested from IT.** IT creates a dedicated database user for each project/application on the ProjetosADM bases. Applications authenticate with their own project credentials — never with personal logins, and never with credentials borrowed from another project.
-- **SQLite must not live in local folders.** SQLite files are only kept on the shared server folders (`T:` drive — ask IT for the server address).
+- **SQLite as a project's data store lives only on the shared server folders** (`T:` drive — ask IT for the server address), never in local folders. The one exception is the disposable local development database described below: it is gitignored and never holds production or personal data.
 - **Naming conventions apply to every database, regardless of type:**
   - Every table name is prefixed with the project name: `{ProjectName}_` (e.g. `TaskManager_`, `DashboardViewer_`).
   - Every column name is prefixed with its table's name (e.g. table `TaskManager_Tasks` has columns `Task_Key`, `Task_Name`, ...).
   - Every table has four audit columns: `_Creat` (user email who created the row), `_ts_Creat` (datetime created, UTC-3), `_Mod` (user who made the last modification), `_ts_Mod` (datetime of the last modification, UTC-3).
   - Primary key columns are named `Key` (e.g. `Task_Key`, `Message_Key`).
   - Foreign keys repeat the referenced table's name plus `_Key` (e.g. `Task_User_Key`, `Task_List_Key`).
+
+### Database Scripts & Local Development
+
+Applies to every project that uses a relational database. Projects that only read files or APIs don't need it (section 12: structure proportional to the project).
+
+- **Local development uses SQLite.** Develop and test each branch against a local SQLite database before anything reaches SQL Server. The engine and connection are chosen by environment variables in `.env` (e.g. `DB_ENGINE=sqlite` / `mssql`, the SQLite file path, the SQL Server connection), so the same code runs locally, on ProjetosADM_DEV, and on ProjetosADM without changes. Commit a `.env.example` with the variable names and no values; `.env` and the local database file stay out of Git (sections 6 and 11).
+- **`database/database.sql` is the complete schema definition** for SQL Server (T-SQL), and **`database/database.sqlite.sql`** is its SQLite equivalent. Both must always describe the same schema.
+  - **Idempotent.** They are re-run after every new branch, so running them on an existing database must only apply what is missing or changed — create missing tables, add missing columns, indexes, and constraints — and never delete existing data. Guard every statement (e.g. `IF NOT EXISTS` / `COL_LENGTH(...) IS NULL` in T-SQL; `CREATE TABLE IF NOT EXISTS` and schema checks in SQLite).
+  - **No silent destructive changes.** Dropping or renaming tables or columns, or any change that loses data, is never automatic: it is a deliberate step, flagged in the pull request and confirmed by a human (section 11).
+  - They follow the naming conventions and audit columns above.
+- **`database/data.sql` (and `database/data.sqlite.sql`) hold fixed and reference data** — lookup lists, statuses, categories, default settings — for the tables defined in the schema scripts. They are also idempotent: re-running them must not duplicate rows (e.g. `MERGE` or insert-where-not-exists in T-SQL; `INSERT OR IGNORE` / `ON CONFLICT` in SQLite). Transactional or test data does not go here.
+- **Who runs them.** The developer applies the scripts to the local SQLite database and to **ProjetosADM_DEV** on every branch. On **ProjetosADM** (production), **IT** applies them at deployment time, after each pull request is merged into `main`.
 
 ## 5. Approved Data Origins
 
@@ -70,7 +82,7 @@ Application data must come only from:
 
 ## 6. Version Control
 
-- Every repository must have a `.gitignore` filtering out documents and binaries: Word, Excel, PDF, DXF, DWG, `.zip`, `.rar`, and development cache files.
+- Every repository must have a `.gitignore` filtering out documents and binaries: Word, Excel, PDF, DXF, DWG, `.zip`, `.rar`, local database files (`*.db`, `*.sqlite`, `*.sqlite3`), and development cache files.
 - Every repository must have a **README** explaining what the project does and how to run it — well enough that someone other than the author could take it over.
 - All projects live exclusively in the **American-Glass** organization. No publishing to personal GitHub accounts or repositories outside the organization.
 
@@ -114,7 +126,7 @@ When using AI to develop, these apply regardless of how permissive everything el
 
 - **Never commit secrets.** Passwords, tokens, API keys, and connection strings do not go in code, documentation, or Git history. Use environment variables; `.env` files belong in `.gitignore`.
 - **Warn before destructive operations.** Deleting data in bulk, overwriting shared files, force-pushing, or deleting repositories requires an explicit heads-up and human confirmation — never silently executed.
-- **Prefer development data.** Build and test against ProjetosADM_DEV or sample data; touch production data only when necessary and deliberately.
+- **Prefer development data.** Build and test against ProjetosADM_DEV or sample data; touch production data only when necessary and deliberately. Locally, use the SQLite development database (section 4).
 - **Don't fabricate.** Test results, data, and claims of "it works" must be backed by evidence, not invented to make something look finished.
 
 ## 12. Maintenance & QA
